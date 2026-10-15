@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Warkop 14KZ</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B0908">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body>
+
+<!-- ===== LOGIN ADMIN ===== -->
+<div id="adminLogin" class="admin-login-wrap">
+  <div class="admin-login-card">
+    <a class="logo" href="index.html"><span class="logo-mark">14KZ</span><span class="logo-word">WARKOP</span></a>
+    <p class="eyebrow" style="margin-top:1.2rem">Panel Admin</p>
+    <h1 class="title" style="font-size:1.7rem">Pintu Belakang Warkop.</h1>
+    <form id="formAdmin">
+      <div class="field"><label for="aEmail">Email Admin</label><input type="email" id="aEmail" placeholder="admin@14kz.id" required></div>
+      <div class="field"><label for="aPass">Password</label><input type="password" id="aPass" placeholder="••••••" required></div>
+      <button type="submit" class="btn btn-gold" style="width:100%">Masuk Panel →</button>
+    </form>
+    <p class="form-note" style="margin-top:1rem">Demo: <b>admin@14kz.id</b> / <b>admin14kz</b><br>Sesi admin otomatis berakhir saat tab ditutup.</p>
+    <p class="form-note" style="margin-top:.6rem"><a href="index.html" style="color:var(--gold)">← Kembali ke website</a></p>
+  </div>
+</div>
+
+<!-- ===== PANEL ADMIN ===== -->
+<div id="adminPanel" class="hidden">
+  <header class="admin-top">
+    <div class="container admin-top-inner">
+      <div style="display:flex;align-items:center;gap:.7rem">
+        <a class="logo" href="index.html"><span class="logo-mark">14KZ</span><span class="logo-word">WARKOP</span></a>
+        <span class="admin-tag">ADMIN</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:.7rem;flex-wrap:wrap">
+        <span class="status-pill" data-status style="margin-top:0"></span>
+        <a class="btn btn-ghost btn-small" href="index.html">Lihat Website</a>
+        <button class="btn btn-danger btn-small" id="btnAdminKeluar">Keluar</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container admin-main">
+    <nav class="admin-tabs" aria-label="Tab panel admin">
+      <button type="button" class="active" data-view="dash">📊 Dashboard</button>
+      <button type="button" data-view="menu">☕ Kelola Menu</button>
+      <button type="button" data-view="orders">🧾 Pesanan</button>
+      <button type="button" data-view="set">⚙️ Pengaturan</button>
+    </nav>
+
+    <!-- DASHBOARD -->
+    <section id="view-dash" class="admin-view">
+      <div class="stat-cards" id="dashStats"></div>
+      <div class="admin-card">
+        <h3>Pesanan Terbaru</h3>
+        <div id="dashRecent"></div>
+      </div>
+      <div class="admin-card">
+        <h3>Alur Kerja Harian</h3>
+        <p class="form-note" style="font-size:.9rem;line-height:2">
+          1️⃣ Customer pesan lewat website → chat masuk WhatsApp <b>0812-8851-7801</b>.<br>
+          2️⃣ Seduh &amp; siapkan pesanan, lalu <b>catat di tab “Pesanan”</b> agar omset tercatat.<br>
+          3️⃣ Customer ambil &amp; bayar di kasir → tandai <b>✓ Selesai</b>.<br>
+          4️⃣ Bahan habis? Tandai item <b>“habis”</b> di Kelola Menu — tombol pesannya otomatis hilang.
+        </p>
+      </div>
+    </section>
+
+    <!-- KELOLA MENU -->
+    <section id="view-menu" class="admin-view hidden">
+      <div class="admin-card">
+        <h3>Tambah / Edit Item Menu</h3>
+        <form id="formMenu" class="form-grid">
+          <div class="field"><label for="mNama">Nama item</label><input id="mNama" placeholder="cth: Kopi Butter" required></div>
+          <div class="field"><label for="mKat">Kategori</label><select id="mKat"></select></div>
+          <div class="field" style="grid-column:1/-1"><label for="mDesc">Deskripsi singkat</label><input id="mDesc" placeholder="cth: creamy, manis karamel, ramah pemula"></div>
+          <div class="field"><label for="mPanas">Harga panas (Rp) — opsional</label><input id="mPanas" type="number" min="0" step="500" placeholder="cth: 15000"></div>
+          <div class="field"><label for="mDingin">Harga dingin (Rp) — opsional</label><input id="mDingin" type="number" min="0" step="500" placeholder="cth: 19000"></div>
+          <div class="field"><label for="mBadge">Label (opsional)</label>
+            <select id="mBadge">
+              <option value="">— tanpa label —</option>
+              <option>Best Seller</option><option>Signature</option><option>Baru</option><option>Promo</option><option>Murah</option>
+            </select>
+          </div>
+          <div class="field" style="grid-column:1/-1;display:flex;gap:.7rem;align-items:center;flex-wrap:wrap">
+            <button type="submit" class="btn btn-gold" id="btnMenuForm">＋ Tambah Item</button>
+            <button type="button" class="btn btn-ghost hidden" id="btnBatalEdit">Batal Edit</button>
+          </div>
+        </form>
+        <p class="form-note">Isi minimal satu harga (panas atau dingin). Harga otomatis ditampilkan dalam ribuan, format “panas / dingin”.</p>
+      </div>
+      <div class="admin-card">
+        <h3>Daftar Menu</h3>
+        <div id="adminMenuList"></div>
+      </div>
+    </section>
+
+    <!-- PESANAN -->
+    <section id="view-orders" class="admin-view hidden">
+      <div class="admin-card">
+        <h3>Catat Pesanan Baru</h3>
+        <form id="formOrder" class="form-grid">
+          <div class="field"><label for="oNama">Nama pengambil</label><input id="oNama" placeholder="cth: Bang Rizky / Walk-in"></div>
+          <div class="field"><label for="oItem">Item</label><select id="oItem"></select></div>
+          <div class="field"><label for="oQty">Jumlah</label><input id="oQty" type="number" min="1" value="1"></div>
+          <div class="field" style="display:flex;align-items:flex-end">
+            <button type="button" class="btn btn-ghost" id="btnTambahBaris">＋ Tambah Baris</button>
+          </div>
+        </form>
+        <div id="orderLines" style="margin-top:1rem"></div>
+        <div class="order-total-kecil"><span>Total</span><b id="orderTotalKecil" style="font-family:Anton;color:var(--gold)">Rp0</b></div>
+        <button type="submit" class="btn btn-gold" style="margin-top:1rem" form="formOrder">💾 Simpan Pesanan</button>
+        <p class="form-note" style="margin-top:.8rem">Pesanan WhatsApp yang masuk ke HP admin dicatat manual di sini — seperti buku kas digital.</p>
+      </div>
+      <div class="admin-card">
+        <h3>Riwayat Pesanan</h3>
+        <div id="adminOrderList"></div>
+      </div>
+    </section>
+
+    <!-- PENGATURAN -->
+    <section id="view-set" class="admin-view hidden">
+      <div class="admin-card">
+        <h3>Jam Operasional</h3>
+        <form id="formSet" class="form-grid">
+          <div class="field"><label for="jBuka">Jam buka (0–23)</label><input id="jBuka" type="number" min="0" max="23" required></div>
+          <div class="field"><label for="jTutup">Jam tutup (0–23)</label><input id="jTutup" type="number" min="0" max="23" required></div>
+          <div class="field" style="grid-column:1/-1"><button type="submit" class="btn btn-gold">Simpan Jam →</button></div>
+        </form>
+        <p class="form-note">Indikator BUKA/TUTUP di seluruh website otomatis mengikuti pengaturan ini.</p>
+      </div>
+      <div class="admin-card">
+        <h3>Zona Berbahaya 🧨</h3>
+        <p class="form-note" style="margin-bottom:1rem">Mengembalikan menu ke daftar awal. Semua item tambahan &amp; editan akan hilang.</p>
+        <button type="button" class="btn btn-danger" id="btnResetMenu">Reset Menu ke Default</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="script.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

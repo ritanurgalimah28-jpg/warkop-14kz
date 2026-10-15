@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak & Lokasi — Warkop 14KZ</title>
+  <meta name="description" content="Kunjungi Warkop 14KZ di Jl. Raya Petir – Serang No.KM. 4, Cipocok Jaya. Setiap hari 17.00–00.00. WhatsApp: 0812-8851-7801.">
+  <meta name="theme-color" content="#0B0908">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body>
+
+<header class="navbar">
+  <nav class="nav-inner container" aria-label="Navigasi utama">
+    <a class="logo" href="index.html"><span class="logo-mark">14KZ</span><span class="logo-word">WARKOP</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="kontak.html" class="active">Kontak</a></li>
+      <li class="nav-cta"><a class="btn btn-gold btn-small" href="menu.html">Pesan Sekarang</a></li>
+    </ul>
+    <div class="nav-auth" id="navAuth"></div>
+  </nav>
+</header>
+
+<main>
+
+<section class="page-hero ph-kontak">
+  <div class="container center">
+    <p class="eyebrow">Kontak &amp; Lokasi</p>
+    <h1 class="title">Mampir, Yuk.</h1>
+    <p class="sub">Satu klik ke Maps, satu chat ke admin, atau langsung datang semua jalur mengarah ke kopi enak.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+
+    <div>
+      <div class="info-card reveal">
+        <div class="info-icon">📍</div>
+        <div><b>Alamat</b><span>Jl. Raya Petir – Serang No.KM. 4, Cipocok Jaya, Kec. Cipocok Jaya, Kota Serang, Banten 42121</span>
+          <div class="info-actions"><a class="btn btn-gold btn-small" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Warkop+14KZ+Jl.+Raya+Petir+Serang+Cipocok+Jaya+Kota+Serang+Banten">🗺️ Buka di Google Maps</a></div>
+        </div>
+      </div>
+      <div class="info-card reveal" style="--d:.08s">
+        <div class="info-icon">📞</div>
+        <div><b>Telepon / WhatsApp</b><span>0812-8851-7801 — rata-rata dibalas sebelum indomie matang 🍜</span>
+          <div class="info-actions">
+            <a class="btn btn-ghost btn-small" href="tel:+6281288517801">📞 Telepon</a>
+            <a class="btn btn-ghost btn-small" target="_blank" rel="noopener" href="https://wa.me/6281288517801?text=Halo%20Warkop%2014KZ!">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="info-card reveal" style="--d:.16s">
+        <div class="info-icon">🕔</div>
+        <div><b>Jam Buka</b><span>Setiap hari · 17.00 – 00.00 (bawa pulang). Makan di tempat juga bisa!</span>
+          <span class="status-pill" data-status style="margin-top:.7rem"></span>
+        </div>
+      </div>
+      <div class="info-card reveal" style="--d:.24s">
+        <div class="info-icon">📱</div>
+        <div><b>Sosial Media</b><span>Update menu baru, promo dadakan, dan jam sangrai — ada di IG &amp; TikTok.</span>
+          <div class="info-actions">
+            <a class="btn btn-ghost btn-small" target="_blank" rel="noopener" href="https://www.instagram.com/warkop_14kz/">📸 @Warkop_14KZ</a>
+            <a class="btn btn-ghost btn-small" target="_blank" rel="noopener" href="https://www.tiktok.com/@warkop.14kz">🎵 @warkop.14KZ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <iframe class="peta-besar reveal" style="--d:.1s" title="Peta lokasi Warkop 14KZ" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Warkop+14KZ+Jl.+Raya+Petir+Serang+Cipocok+Jaya+Kota+Serang+Banten&amp;output=embed"></iframe>
+
+  </div>
+</section>
+
+<!-- ===== FORM ===== -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Kirim Pesan</p>
+      <h2 class="title">Ada yang Mau Ditanyakan?</h2>
+    </div>
+    <form id="formKontak" class="contact-form reveal">
+      <div class="field"><label for="fNama">Nama</label><input type="text" id="fNama" name="nama" placeholder="Nama kamu" required></div>
+      <div class="field"><label for="fPesan">Pesan</label><textarea id="fPesan" name="pesan" rows="4" placeholder="Tanya menu, titip acara, atau sekadar sapa admin…" required></textarea></div>
+      <button type="submit" class="btn btn-wa">💬 Kirim via WhatsApp</button>
+      <p class="form-note">Pesanmu otomatis dibuka di WhatsApp admin 14KZ.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="title">Sering Ditanyakan.</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>Bisa pesan lewat website ini?</summary><p>Bisa! Masuk ke halaman Menu, tap <b>+</b> pada item, lalu klik “Pesan via WhatsApp”. Pesananmu otomatis terkirim ke admin bayar di kasir saat ambil.</p></details>
+      <details><summary>Bisa makan di tempat?</summary><p>Tentu bisa! kami melayani<b> dine-in & takeaway</b> (17.00–00.00).</p></details>
+      <details><summary>WiFi-nya gratis?</summary><p>Gratis untuk pelanggan. Password-nya bisa ditanyakan langsung di kasir. Kecepatan 50 Mbps nugas dan meeting online aman.</p></details>
+      <details><summary>Bisa titip acara atau komunitas?</summary><p>Bisa banget! Chat admin lewat WhatsApp untuk jadwal, kapasitas, dan paket menu komunitas.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html"><span class="logo-mark">14KZ</span><span class="logo-word">WARKOP</span></a>
+        <p class="tagline" style="margin-top:.9rem">“Secangkir kopi, seribu inspirasi.”</p>
+      </div>
+      <div>
+        <h4>Jelajahi</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="akun.html">Akun Member</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kunjungi</h4>
+        <ul>
+          <li>Jl. Raya Petir – Serang No.KM. 4, Cipocok Jaya, Kota Serang, Banten 42121</li>
+          <li>Setiap hari · 17.00–00.00</li>
+          <li><a href="tel:+6281288517801">0812-8851-7801</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sosial</h4>
+        <ul>
+          <li><a target="_blank" rel="noopener" href="https://www.instagram.com/warkop_14kz/">📸 @Warkop_14KZ</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.tiktok.com/@warkop.14kz">🎵 @warkop.14KZ</a></li>
+          <li><a target="_blank" rel="noopener" href="https://wa.me/6281288517801">💬 WhatsApp Admin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="year">2025</span> Warkop 14KZ — Dibuat dengan ☕ oleh <strong>Rita Nurhalimah</strong></p>
+      <p>Cipocok Jaya · Kota Serang · Banten 🇮🇩</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

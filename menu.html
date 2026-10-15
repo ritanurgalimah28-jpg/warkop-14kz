@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Warkop 14KZ</title>
+  <meta name="description" content="Menu lengkap Warkop 14KZ: House Signature, Clasik Coffee, Daily Drink, Mie & Snack. Harga warkop, rasa kafe.">
+  <meta name="theme-color" content="#0B0908">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body>
+
+<header class="navbar">
+  <nav class="nav-inner container" aria-label="Navigasi utama">
+    <a class="logo" href="index.html"><span class="logo-mark">14KZ</span><span class="logo-word">WARKOP</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li class="nav-cta"><a class="btn btn-gold btn-small" href="#signature">Pesan Sekarang</a></li>
+    </ul>
+    <div class="nav-auth" id="navAuth"></div>
+  </nav>
+</header>
+
+<main>
+
+<section class="page-hero ph-menu">
+  <div class="container center">
+    <p class="eyebrow">MENU</p>
+    <h1 class="title">MENU 14KZ</h1>
+    <p class="sub">Sama seperti menu yang nempel di dinding warkop kami — bedanya, yang ini dikelola langsung oleh admin dan bisa dipesan sambil rebahan.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="chips">
+      <button type="button" class="chip active" data-filter="all">Semua</button>
+      <button type="button" class="chip" data-filter="signature">✦ House Signature</button>
+      <button type="button" class="chip" data-filter="kopi">☕ Clasik Coffee</button>
+      <button type="button" class="chip" data-filter="nonkopi">🥤 Daily Drink</button>
+      <button type="button" class="chip" data-filter="mie">🍜 Mie &amp; Snack</button>
+    </div>
+    <p class="legend">Harga dalam <b>ribuan rupiah</b> · format <b>panas / dingin</b> — contoh: “10 / 15” = Rp10.000 panas, Rp15.000 dingin. Item yang <b>HABIS</b> otomatis disembunyikan tombol pesannya.</p>
+
+    <!-- Daftar menu dirender otomatis dari data (bisa diubah admin di admin.html) -->
+    <div id="menuRoot"></div>
+
+  </div>
+</section>
+
+<!-- ===== MENU FISIK ===== -->
+<section class="section alt">
+  <div class="container menu-fisik">
+    <div>
+      <p class="eyebrow reveal">Menu Fisik Kami</p>
+      <h2 class="title reveal" style="--d:.08s">Sama Seperti di Dinding Warkop.</h2>
+      <p class="reveal" style="--d:.14s">Website ini mengikuti menu asli yang kami tempel di warkop — jadi tidak ada harga “online” yang beda. Yang online, cuma lebih praktis: pilih, masukkan keranjang, kirim ke WhatsApp.</p>
+      <a class="btn btn-ghost reveal" style="--d:.2s" href="menu_14kz.png" download>⬇️ Unduh Menu (PNG)</a>
+    </div>
+    <figure class="menu-frame reveal" style="--d:.12s">
+      <img src="menu_14kz.png" alt="Menu fisik Warkop 14KZ — House Signature, Clasik Coffee, Daily Drink">
+    </figure>
+  </div>
+</section>
+
+<!-- ===== CARA PESAN ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Cara Pesan</p>
+      <h2 class="title">Semudah Itu.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Pilih Item</h3><p>Tap tombol <b>+</b> di menu favoritmu.</p></div>
+      <div class="step reveal" style="--d:.08s"><h3>Cek Keranjang</h3><p>Atur jumlah, pastikan semuanya pas.</p></div>
+      <div class="step reveal" style="--d:.16s"><h3>Kirim WhatsApp</h3><p>Pesananmu otomatis jadi chat ke admin 14KZ.</p></div>
+      <div class="step reveal" style="--d:.24s"><h3>Ambil &amp; Bayar</h3><p>Bayar di kasir saat ambil. Simpel, tanpa biaya aplikasi.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html"><span class="logo-mark">14KZ</span><span class="logo-word">WARKOP</span></a>
+        <p class="tagline" style="margin-top:.9rem">“Secangkir kopi, seribu inspirasi.”</p>
+      </div>
+      <div>
+        <h4>Jelajahi</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="akun.html">Akun Member</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kunjungi</h4>
+        <ul>
+          <li>Jl. Raya Petir – Serang No.KM. 4, Cipocok Jaya, Kota Serang, Banten 42121</li>
+          <li>Setiap hari · 17.00–00.00</li>
+          <li><a href="tel:+6281288517801">0812-8851-7801</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sosial</h4>
+        <ul>
+          <li><a target="_blank" rel="noopener" href="https://www.instagram.com/warkop_14kz/">📸 @Warkop_14KZ</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.tiktok.com/@warkop.14kz">🎵 @warkop.14KZ</a></li>
+          <li><a target="_blank" rel="noopener" href="https://wa.me/6281288517801">💬 WhatsApp Admin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="year">2025</span> Warkop 14KZ — Dibuat dengan ☕ oleh <strong>[Nama Kamu]</strong></p>
+      <p>Cipocok Jaya · Kota Serang · Banten 🇮🇩</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== KERANJANG ===== -->
+<div class="cart-bar" id="cartBar">
+  <span>🛒 <b id="cartCount">0 item</b> · <b id="cartTotal">Rp0</b></span>
+  <button id="cartOpen" class="btn btn-dark btn-small">Lihat Keranjang →</button>
+</div>
+<div class="drawer-back" id="drawerBack"></div>
+<aside class="drawer" id="drawer" aria-label="Keranjang pesanan">
+  <div class="drawer-head"><b>KERANJANG</b><button id="cartClose" aria-label="Tutup keranjang">✕</button></div>
+  <div class="drawer-list" id="cartList"></div>
+  <div class="drawer-foot">
+    <div class="field" style="margin:0"><label for="cartNama">Nama pengambil (opsional)</label><input type="text" id="cartNama" placeholder="Nama kamu"></div>
+    <div class="drawer-total"><span>Total</span><b id="cartTotalBig">Rp0</b></div>
+    <button class="btn btn-wa" id="btnCheckout">💬 Pesan via WhatsApp</button>
+    <p class="form-note">Pesanan diteruskan ke admin 14KZ lewat WhatsApp. Bayar di kasir saat ambil — tanpa biaya aplikasi.</p>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>

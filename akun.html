@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akun Member — Warkop 14KZ</title>
+  <meta name="description" content="Masuk atau daftar akun member Warkop 14KZ: kumpulkan poin dan tukar dengan kopi gratis.">
+  <meta name="theme-color" content="#0B0908">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body>
+
+<header class="navbar">
+  <nav class="nav-inner container" aria-label="Navigasi utama">
+    <a class="logo" href="index.html"><span class="logo-mark">14KZ</span><span class="logo-word">WARKOP</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li class="nav-cta"><a class="btn btn-gold btn-small" href="menu.html">Pesan Sekarang</a></li>
+    </ul>
+    <div class="nav-auth" id="navAuth"></div>
+  </nav>
+</header>
+
+<main>
+
+<section class="page-hero">
+  <div class="container center">
+    <p class="eyebrow">Akun 14KZ</p>
+    <h1 class="title">Kartu Anggota Digital.</h1>
+    <p class="sub">Kumpulkan poin tiap pesan — 25 poin ditukar 1 kopi gratis.Gratis daftar, selamanya.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- ===== BELUM LOGIN ===== -->
+    <div id="authView" class="auth-wrap">
+      <div class="auth-card reveal">
+        <div class="auth-tabs">
+          <button type="button" class="active" data-tab="formLogin">Masuk</button>
+          <button type="button" data-tab="formDaftar">Daftar</button>
+        </div>
+
+        <form id="formLogin" class="auth-form">
+          <div class="field"><label for="loginEmail">Email</label><input type="email" id="loginEmail" name="email" placeholder="email@kamu.com" required></div>
+          <div class="field"><label for="loginPass">Password</label><input type="password" id="loginPass" name="pass" placeholder="••••••" required></div>
+          <button type="submit" class="btn btn-gold" style="width:100%">Masuk →</button>
+          <p class="form-note" style="margin-top:1rem">💡 Akun demo buat uji coba: <b>demo@14kz.id</b> / password <b>1234</b></p>
+        </form>
+
+        <form id="formDaftar" class="auth-form hidden">
+          <div class="field"><label for="daftarNama">Nama Lengkap</label><input type="text" id="daftarNama" name="nama" placeholder="Nama kamu" required></div>
+          <div class="field"><label for="daftarEmail">Email</label><input type="email" id="daftarEmail" name="email" placeholder="email@kamu.com" required></div>
+          <div class="field"><label for="daftarPass">Password</label><input type="password" id="daftarPass" name="pass" placeholder="Minimal 4 karakter" minlength="4" required></div>
+          <button type="submit" class="btn btn-gold" style="width:100%">Daftar Gratis →</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== SUDAH LOGIN ===== -->
+    <div id="profilView" class="profil-grid hidden">
+      <div>
+        <div class="member-card reveal">
+          <div class="mc-top"><span>KARTU ANGGOTA</span><b class="gold">14KZ</b></div>
+          <h3 id="mcNama">—</h3>
+          <div class="mc-bottom"><span id="mcPoin" class="gold">0 POIN</span><span id="mcSejak"></span></div>
+        </div>
+
+        <div class="poin-wrap reveal" style="--d:.08s">
+          <div class="row-between"><b>☕ Poin Kamu</b><span class="form-note" id="poinTeks"></span></div>
+          <div class="poin-track"><div class="poin-bar" id="poinBar"></div></div>
+          <p class="form-note">Setiap Rp10.000 belanja = 1 poin. Kumpulkan 25 poin → 1 kopi gratis dari kami.</p>
+        </div>
+
+        <div class="row-between reveal" style="--d:.16s">
+          <a class="btn btn-gold" href="menu.html">Pesan &amp; Kumpulin Poin →</a>
+          <button class="btn btn-danger" id="btnKeluar">Keluar</button>
+        </div>
+      </div>
+
+      <div class="riwayat reveal" style="--d:.12s">
+        <h2 class="title-sm">Riwayat Pesanan</h2>
+        <div id="riwayat"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html"><span class="logo-mark">14KZ</span><span class="logo-word">WARKOP</span></a>
+        <p class="tagline" style="margin-top:.9rem">“Secangkir kopi, seribu inspirasi.”</p>
+      </div>
+      <div>
+        <h4>Jelajahi</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="akun.html">Akun Member</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kunjungi</h4>
+        <ul>
+          <li>Jl. Raya Petir – Serang No.KM. 4, Cipocok Jaya, Kota Serang, Banten 42121</li>
+          <li>Setiap hari · 17.00–00.00</li>
+          <li><a href="tel:+6281288517801">0812-8851-7801</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sosial</h4>
+        <ul>
+          <li><a target="_blank" rel="noopener" href="https://www.instagram.com/warkop_14kz/">📸 @Warkop_14KZ</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.tiktok.com/@warkop.14kz">🎵 @warkop.14KZ</a></li>
+          <li><a target="_blank" rel="noopener" href="https://wa.me/6281288517801">💬 WhatsApp Admin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="year">2025</span> Warkop 14KZ — Dibuat dengan ☕ oleh <strong>Rita Nurhalimah</strong></p>
+      <p>Cipocok Jaya · Kota Serang · Banten 🇮🇩</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
